@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le voyage de Sofia en Slovénie</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Sofia en Slovénie</div>
+        <div class="nav-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#projets">Projets</a>
+            <a href="#experiences">Expériences</a>
+            <a href="#carte">Carte</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <header id="accueil" class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/1920/1080?random=1');">
+        <h1>Bienvenue sur mon aventure européenne !</h1>
+        <h2>Le voyage de Sofia en Slovénie</h2>
+        <p class="hero-text">Pendant plusieurs mois, j'ai eu la chance de découvrir un pays fascinant...</p>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Qui suis-je ?</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://picsum.photos/400/400?random=2" alt="Sofia">
+                </div>
+                <div class="about-text">
+                    <p>Je m'appelle Sofia, j'ai 24 ans, et je viens de France. Passionnée de voyages, de nature et d'entraide, j'ai décidé de rejoindre le Corps Européen de Solidarité pour une mission en Slovénie.</p>
+                    <p>Ce volontariat a été l'une des expériences les plus enrichissantes de ma vie, mêlant travail de terrain, découvertes humaines, et aventures inoubliables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="section bg-light">
+        <div class="container">
+            <h2>Mon impact sur place</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Restauration de sentiers">
+                    <h3>Restauration de sentiers</h3>
+                    <p>Aide au balisage et nettoyage des chemins dans les montagnes slovènes, notamment dans le Parc National du Triglav.</p>
+                </div>
+                <div class="project-card">
+                    <img src="https://picsum.photos/400/300?random=4" alt="Sensibilisation écologique">
+                    <h3>Sensibilisation écologique</h3>
+                    <p>Organisation d'ateliers éducatifs pour les écoles locales sur la préservation des écosystèmes alpins.</p>
+                </div>
+                <div class="project-card">
+                    <img src="https://picsum.photos/400/300?random=5" alt="Associations locales">
+                    <h3>Travail associatif</h3>
+                    <p>Soutien administratif et logistique pour promouvoir le tourisme responsable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences" class="section">
+        <div class="container">
+            <h2>Mes meilleurs moments</h2>
+            <div class="experiences-slider">
+                <div class="experience-slide">
+                    <img src="https://picsum.photos/600/400?random=6" alt="Triglav">
+                    <div class="experience-content">
+                        <h3>Randonnée au sommet du Triglav</h3>
+                        <p>Escalader le sommet le plus emblématique de Slovénie a été un véritable défi, mais la vue à couper le souffle depuis les hauteurs a largement récompensé mes efforts !</p>
+                    </div>
+                </div>
+                <div class="experience-slide">
+                    <img src="https://picsum.photos/600/400?random=7" alt="Vintgar">
+                    <div class="experience-content">
+                        <h3>Randonnée dans le Vintgar Gorge</h3>
+                        <p>La randonnée dans le Vintgar Gorge est une expérience inoubliable, avec ses cascades et ses formations rocheuses.</p>
+                    </div>
+                </div>
+                <div class="experience-slide">
+                    <img src="https://picsum.photos/600/400?random=8" alt="Lac de Bled">
+                    <div class="experience-content">
+                        <h3>Visite du Lac de Bled</h3>
+                        <p>Le Lac de Bled est l'un des plus beaux lacs d'Europe, avec son île centrale et ses châteaux.</p>
+                    </div>
+                </div>
+                <div class="experience-slide">
+                    <img src="https://picsum.photos/600/400?random=9" alt="Vallée de la Soča">
+                    <div class="experience-content">
+                        <h3>Randonnée dans la Vallée de la Soča</h3>
+                        <p>La Vallée de la Soča est une région pittoresque avec des paysages variés et des villages traditionnels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="carte" class="section bg-light">
+        <div class="container">
+            <h2>Carte interactive de mes visites</h2>
+            <div id="map" class="map-container"></div>
+            <div class="map-legend">
+                <h3>Mes lieux favoris</h3>
+                <ul class="map-points">
+                    <li>
+                        <h4>Parc National du Triglav</h4>
+                        <p>Mon coup de cœur absolu ! J'ai passé des journées magiques à randonner ici. Le mont Triglav est majestueux et l'air pur des montagnes est vivifiant. Les refuges de montagne y sont particulièrement accueillants.</p>
+                    </li>
+                    <li>
+                        <h4>Lac Bohinj</h4>
+                        <p>Mon havre de paix préféré. Contrairement à Bled, Bohinj a gardé son authenticité. J'aime m'y baigner tôt le matin quand le lac est encore miroir.</p>
+                    </li>
+                    <li>
+                        <h4>Ljubljana</h4>
+                        <p>Ma nouvelle maison ! Cette ville a une âme unique. J'adore particulièrement le marché central le samedi matin et les cafés le long de la rivière.</p>
+                    </li>
+                    <li>
+                        <h4>Cave de Postojna</h4>
+                        <p>Une expérience inoubliable ! Le petit train qui traverse les grottes est fascinant, et j'ai eu la chance de voir les fameux protées, ces salamandres aveugles.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="galerie" class="section">
+        <div class="container">
+            <h2>Mes clichés slovènes</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/400?random=10" alt="Paysage slovène">
+                </div>
+                <div class="gallery-item" data-caption="Marché central de Ljubljana 🥨">
+                    <img src="https://picsum.photos/400/400?random=11" alt="Culture locale">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/400?random=12" alt="Architecture">
+                </div>
+                <div class="gallery-item" data-caption="Randonnée dans le Triglav ⛰️">
+                    <img src="https://picsum.photos/400/400?random=13" alt="Nature">
+                </div>
+                <div class="gallery-item" data-caption="Dégustation de spécialités locales à Maribor 🍷">
+                    <img src="https://picsum.photos/400/400?random=14" alt="Gastronomie">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/400?random=15" alt="Traditions">
+                </div>
+                <div class="gallery-item" data-caption="Coucher de soleil à Piran 🌊">
+                    <img src="https://picsum.photos/400/400?random=16" alt="Montagnes">
+                </div>
+                <div class="gallery-item" data-caption="Lac de Bled au lever du soleil 🌅">
+                    <img src="https://picsum.photos/400/400?random=17" alt="Lacs">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/400?random=18" alt="Villes">
+                </div>
+                <div class="gallery-item" data-caption="Grosse soirée à Ljubljana 🎉">
+                    <img src="https://picsum.photos/400/400?random=19" alt="Festivals">
+                </div>
+                <div class="gallery-item" data-caption="Basketball à Ljubljana 🏀">
+                    <img src="https://picsum.photos/400/400?random=20" alt="Sports">
+                </div>
+                <div class="gallery-item" data-caption="Atelier de poterie à Maribor 🎨">
+                    <img src="https://picsum.photos/400/400?random=21" alt="Artisanat">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="section bg-light">
+        <div class="container">
+            <h2>Carnet de voyage</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="https://picsum.photos/600/400?random=16" alt="Ljubljana">
+                    <div class="blog-content">
+                        <h3>Une journée à Ljubljana</h3>
+                        <p>Ljubljana est une capitale à taille humaine où l'on se sent immédiatement à l'aise. J'ai adoré flâner le long de la rivière Ljubljanica, découvrir le marché central et grimper jusqu'au château pour admirer la vue.</p>
+                        <a href="articles/journee-ljubljana.html" class="read-more">Lire la suite →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="https://picsum.photos/600/400?random=17" alt="Randonnée">
+                    <div class="blog-content">
+                        <h3>Première randonnée en Slovénie</h3>
+                        <p>Ma première randonnée dans les montagnes a été une aventure inoubliable. Les paysages alpins, la rencontre avec des marmottes, et la sérénité des lieux m'ont donné envie d'en explorer encore plus !</p>
+                        <a href="articles/premiere-randonnee.html" class="read-more">Lire la suite →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="https://picsum.photos/600/400?random=18" alt="Gastronomie">
+                    <div class="blog-content">
+                        <h3>Découverte de la cuisine slovène</h3>
+                        <p>Entre influences méditerranéennes et d'Europe centrale, la cuisine slovène est un délicieux mélange de saveurs...</p>
+                        <a href="articles/cuisine-slovene.html" class="read-more">Lire la suite →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="https://picsum.photos/600/400?random=19" alt="Traditions">
+                    <div class="blog-content">
+                        <h3>Les traditions slovènes</h3>
+                        <p>De la fête de la Saint-Martin aux célébrations du Kurentovanje, découvrez les traditions qui rythment la vie slovène...</p>
+                        <a href="articles/traditions-slovenes.html" class="read-more">Lire la suite →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Restons en contact !</h2>
+            <div class="social-links">
+                <a href="mailto:sofia.voyage@example.com">
+                    <i class="fas fa-envelope"></i>
+                    sofia.voyage@example.com
+                </a>
+                <a href="https://linkedin.com/in/sofia-voyage" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="https://instagram.com/sofia.voyage" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
